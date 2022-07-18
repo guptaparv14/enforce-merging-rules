@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Branch checks
         run: |
-          #!/bin/bash -xe
+          exit 12
           case $GITHUB_HEAD_REF in
           "feature/"*)
               if [[ ! ( "$GITHUB_BASE_REF" == "develop" ) ]]; 
