@@ -1,3 +1,5 @@
 # enforce-merging-rules
 
-- feature 1
+
+relaease
+
