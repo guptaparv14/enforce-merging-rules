@@ -8,23 +8,22 @@ jobs:
     steps:
       - name: Branch checks
         run: |
-          exit 12
           case $GITHUB_HEAD_REF in
-          "feature/"*)
+          feature/*)
               if [[ ! ( "$GITHUB_BASE_REF" == "develop" ) ]]; 
               then 
                   echo "The $GITHUB_HEAD_REF branch is not mergeable to $GITHUB_BASE_REF"
                   exit 2
               fi
           ;;
-          "release/"*)
+          release/*)
               if [[ ! ( "$GITHUB_BASE_REF" == "develop" || "$GITHUB_BASE_REF" == "main" ) ]]; 
               then 
                   echo "The $GITHUB_HEAD_REF branch is not mergeable to $GITHUB_BASE_REF"
                   exit 2
               fi
           ;;
-          "hotfix/"*)
+          hotfix/*)
               if [[ ! ( "$GITHUB_BASE_REF" == "develop" || "$GITHUB_BASE_REF" == "main" ) ]]; 
               then 
                   echo "The $GITHUB_HEAD_REF branch is not mergeable to $GITHUB_BASE_REF"
